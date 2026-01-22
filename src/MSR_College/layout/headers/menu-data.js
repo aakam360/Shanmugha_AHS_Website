@@ -50,7 +50,7 @@ const menu_data = [
         title: "Medical Science & research",
         icon: true,
         icon_name: "biotech_black_48dp.svg",
-        link: "https://shanmugha-msr.edu.in/",
+        link: "https://shanmugha-msr-website.onrender.com",
         mega_submenu: [],
       },
 
