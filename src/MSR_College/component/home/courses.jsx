@@ -55,8 +55,8 @@ const course_home = [
 
 const Courses = () => {
   return (
-        <div className="edu-course-area course-area-2 gap-tb-text" >
-            <div className="container" >
+        <div id="our-courses"className="edu-course-area course-area-2 gap-tb-text " >
+            <div className="container " >
                 <div className="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
                     <span className="pre-title">Educational Programs</span>
                     <h2 className="title">Our Courses</h2>
