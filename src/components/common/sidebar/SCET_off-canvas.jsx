@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import menu_data from '../../../layout/headers/menu-data';
 
-const SCET_OffCanvas = ({ isOpen, setIsOpen }) => {
+const SCET_OffCanvas = ({ isOpen, setIsOpen, menu_data: custom_menu_data, logo }) => {
+    const active_menu_data = custom_menu_data || menu_data;
     const [navTitle, setNavTitle] = useState('')
 
     const openMobileMenu = (menu) => {
@@ -21,8 +22,14 @@ const SCET_OffCanvas = ({ isOpen, setIsOpen }) => {
                         <div className="logo">
                             <Link href="/" legacyBehavior>
                                 <a>
-                                    <img className="logo-light" src='/assets/images/logo/logo-dark.png' alt="logo" />
-                                    <img className="logo-dark" src='/assets/images/logo/logo-white.png' alt="logo" />
+                                    {logo ? (
+                                        <img className="logo-light" src={logo} alt="logo" />
+                                    ) : (
+                                        <>
+                                            <img className="logo-light" src='/assets/images/logo/logo-dark.png' alt="logo" />
+                                            <img className="logo-dark" src='/assets/images/logo/logo-white.png' alt="logo" />
+                                        </>
+                                    )}
                                 </a>
                             </Link>
                         </div>
@@ -36,7 +43,7 @@ const SCET_OffCanvas = ({ isOpen, setIsOpen }) => {
 
                     <div className="mm-menu">
                         <ul>
-                            {menu_data.map((menu, i) => (
+                            {active_menu_data.map((menu, i) => (
                                 <li key={i} className={!menu.submenus ? '' : navTitle === menu?.title ?
                                     "has-droupdown active" : "has-droupdown"}>
                                     {menu.submenus && <button onClick={() => openMobileMenu(menu.title)}>{menu.title} </button>}
@@ -44,7 +51,7 @@ const SCET_OffCanvas = ({ isOpen, setIsOpen }) => {
                                     {!menu.mobile_pages_menu &&
                                         <ul className={navTitle === menu?.title ? "sub-menu active" : "sub-menu"}>
                                             {menu?.submenus?.map((sub, i) => (
-                                                <li key={i}><Link href={`${sub.link}`}>{sub.title}</Link></li>
+                                                <li key={i}><Link href={`${sub.link}`} onClick={() => setIsOpen(false)}>{sub.title}</Link></li>
                                             ))}
                                         </ul>
                                     }
@@ -52,12 +59,12 @@ const SCET_OffCanvas = ({ isOpen, setIsOpen }) => {
                                     {menu.mobile_pages_menu &&
                                         <ul className={navTitle === menu?.title ? "sub-menu active" : "sub-menu"}>
                                             {menu?.mobile_pages_menu?.map((sub, i) => (
-                                                <li key={i}><Link href={`${sub.link}`}>{sub.title}</Link></li>
+                                                <li key={i}><Link href={`${sub.link}`} onClick={() => setIsOpen(false)}>{sub.title}</Link></li>
                                             ))}
                                         </ul>
                                     }
 
-                                    {!menu.submenus && <Link href={menu.link}>{menu.title}</Link>}
+                                    {!menu.submenus && <Link href={menu.link} onClick={() => setIsOpen(false)}>{menu.title}</Link>}
                                 </li>
                             ))}
                         </ul>
