@@ -30,7 +30,7 @@ const AboutArea = ({head_text, lists}) => {
                     <div className="col-lg-5">
                         <div className="edu-faq-gallery">
                             <div className="faq-thumbnail thumbnail-2" data-sal-delay="50" data-sal="slide-left" data-sal-duration="800">
-                                <img src={'/assets/images/SMG_4399-01.jpg'} alt="Managment Images" />
+                                <img src={'/assets/images/ahsabout.png'} alt="Managment Images" />
                             </div>
                             <ul className="shape-group">
                                 <motion.li className="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200"

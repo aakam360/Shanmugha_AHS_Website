@@ -6,6 +6,12 @@ const menu_data = [
     mega_menu: false,
     single_menu: true,
   },
+  {
+    title: "Our Courses",
+    link: "/#our-courses",
+    mega_menu: false,
+    single_menu: true,
+  },
   // {
   //   title: "Hospital Tie-ups",
   //   link: "/",

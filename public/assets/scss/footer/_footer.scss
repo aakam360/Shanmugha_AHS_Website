@@ -5,32 +5,35 @@
     position: relative;
     // z-index: 1;
 
-    .footer-top {
-        // background-color: #F0F4F5;
-        position: relative;
-        padding: 100px 0 95px;
+ .footer-top {
+  // background-color: #F0F4F5;
+  position: relative;
+  padding: 20px 0 18px;   
 
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(../../images/bg/BG-3.webp);
-            background-repeat: no-repeat;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../images/bg/BG-3.webp);
+    background-repeat: no-repeat;
             
-            @media #{$md-layout-1} {  
-                display: none;
-            }
-        }
-        @media #{$md-layout} {
-            padding: 80px 0;
-        }
-        @media #{$sm-layout} {
-            padding: 60px 0;
-        }
+    @media #{$md-layout-1} {  
+      display: none;
     }
+  }
+
+  @media #{$md-layout} {
+    padding: 30px 0;      // 🔽 was 80px
+  }
+
+  @media #{$sm-layout} {
+    padding: 25px 0;      // 🔽 was 60px
+  }
+}
+
     &.footer-style-1 {
         background-color: #F0F4F5;
         .footer-top {
@@ -134,8 +137,8 @@
         }
     }
     .description {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 6px;
+        margin-bottom: 6px;
     }
 
     .information-list {
@@ -174,12 +177,12 @@
             }
         }
         .inner {
-            margin-top: 36px;
+            margin-top: 8px;
             @media #{$md-layout} {
-                margin-top: 20px;
+                margin-top: 12px;
             }
             @media #{$sm-layout} {
-                margin-top: 20px;
+                margin-top: 12px;
             }
         }
         .footer-link {
@@ -194,7 +197,7 @@
                     line-height: 26px;
                 }
                 & + li {
-                    margin-top: 11px;
+                    margin-top: 5px;
                 }
                 &:hover {
                     a {
@@ -204,7 +207,7 @@
             }
         }
         .input-group {
-            margin-bottom: 35px;
+            margin-bottom: 15px;
             .form-control {
                 background-color: var(--color-white);
                 border-radius: 5px !important;
@@ -473,7 +476,7 @@
     Copyright Styles  
 --------------------------*/
 .copyright-area {
-    padding: 32px 0;
+    padding: 12px 0;
     p {
         margin-bottom: 0;
     }
@@ -507,4 +510,269 @@
     .copyright-area {
         padding: 105px 0 50px;
     }
+}
+
+/* =========================================================
+   FOOTER LAYOUT CORE
+   ========================================================= */
+
+.footer-3col {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*="col-"] {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* =========================================================
+   INNER CONTAINER
+   ========================================================= */
+
+/* Inner container to force same vertical start line */
+.footer-col-inner {
+  max-width: 260px;   // same visual width for all 3 columns
+  margin-left: 0;
+}
+
+/* =========================================================
+   COLUMN BASE RESET
+   ========================================================= */
+
+.footer-col-1,
+.footer-col-2,
+.footer-col-3 {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: left;
+}
+
+/* =========================================================
+   LOGO + COLUMN 1 ALIGNMENT
+   ========================================================= */
+
+/* Logo */
+.footer-logo {
+  max-width: 300px;
+  margin-bottom: 10px;
+  color: #ffffff;   
+}
+
+/* Align logo vertically */
+.footer-col-1 .logo {
+  position: relative;
+  top: 14px;   
+}
+/* Align address block vertically with logo */
+.footer-col-1 .footer-contact-simple {
+  position: relative;
+  top: 14px;  
+}
+/* Column 1 horizontal nudge */
+.footer-col-1 {
+  margin-left: 26px;
+}
+
+/* =========================================================
+   COLUMN 2 (OUR COURSES)
+   ========================================================= */
+
+.footer-col-2 {
+  margin-left: 50px;  
+}
+
+/* Inner alignment */
+.footer-col-2 .footer-col-inner {
+  margin-left: 0;      
+  padding-left: 0;  
+}
+
+/* Heading alignment */
+.footer-col-2 .widget-title {
+  text-align: left;   
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* =========================================================
+   COLUMN 3 (CONTACT US)
+   ========================================================= */
+
+.footer-col-3 {
+  margin-left: 120px;  
+}
+
+/* Headings */
+.footer-col-3 .widget-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   SHARED HEADING STYLES
+   ========================================================= */
+
+.footer-col-2 .widget-title,
+.footer-col-3 .widget-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TEXT NORMALIZATION
+   ========================================================= */
+
+.footer-contact-simple p,
+.footer-links-simple p {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Force straight alignment for courses */
+.footer-links-simple p {
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* ===== Footer course links ===== */
+
+.footer-links-simple a {
+  color: inherit;              
+  text-decoration: none;       
+  transition: color 0.2s ease;
+}
+
+.footer-links-simple a:hover {
+  color: var(--color-primary); // your theme color
+}
+
+/* =========================================================
+   TABLET LAYOUT (md: 768px – 991px)
+   Col-1 + Col-2 in one row, Col-3 below
+   ========================================================= */
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+  /* ===== Core tablet layout ===== */
+  .footer-3col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;   
+  }
+
+  /* Column-1 and Column-2 side-by-side */
+  .footer-3col > [class*="col-"] {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 0 !important;    
+    padding-left: 0;               
+    padding-right: 24px;
+  }
+
+  /* Column-3 full width below */
+  .footer-col-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  .footer-col-inner {
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;              
+  }
+
+  /* Reset all desktop column shifts */
+  .footer-col-1,
+  .footer-col-2,
+  .footer-col-3 {
+    margin-left: 0 !important;
+  }
+
+  /* Reset all vertical offsets */
+  .footer-col-1 .logo,
+  .footer-col-1 .footer-contact-simple,
+  .footer-col-2 .widget-title {
+    top: 0;
+  }
+
+  /* Keep everything LEFT aligned */
+  .footer-col-1 .logo,
+  .footer-col-2 .widget-title,
+  .footer-col-3 .widget-title,
+  .footer-contact-simple p,
+  .footer-links-simple p {
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LAYOUT (sm: < 768px)
+   All columns stacked one by one
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .footer-3col {
+    display: block;
+
+  }
+
+  .footer-3col > [class*="col-"] {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-left: 0 !important;   
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Reset all column nudges */
+  .footer-col-1,
+  .footer-col-2,
+  .footer-col-3 {
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
+
+  .footer-col-inner {
+    max-width: 100%;
+  }
+
+/* ===== Mobile: keep text LEFT aligned ===== */
+
+.footer-col-1 .logo,
+.footer-col-2 .widget-title,
+.footer-col-3 .widget-title {
+  text-align: left; 
+}
+
+.footer-contact-simple p,
+.footer-links-simple p {
+  text-align: left;  
+}
+
+
+  /* Remove all vertical offsets */
+  .footer-col-1 .logo,
+  .footer-col-1 .footer-contact-simple,
+  .footer-col-2 .widget-title {
+    top: 0;
+  }
+
+  /* Tighter mobile text */
+  .footer-contact-simple p,
+  .footer-links-simple p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
 }

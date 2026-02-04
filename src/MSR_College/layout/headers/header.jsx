@@ -5,10 +5,11 @@ import useSticky from "../../../hooks/use-sticky";
 
 import MainMenu from "./component/main-menu";
 
+import menu_data from "./menu-data";
+
 const Header = ({ style_3, no_topBar = false }) => {
   const { sticky } = useSticky();
 
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -37,14 +38,26 @@ const Header = ({ style_3, no_topBar = false }) => {
                   <MainMenu />
                 </nav>
               </div>
+
+              <div className="header-right">
+                <ul className="header-action">
+                  <li className="mobile-menu-bar d-block d-xl-none">
+                    <button
+                      className="hamberger-button"
+                      onClick={() => setIsOpen(true)}
+                    >
+                      <i className="icon-54"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
       </header>
 
       {/* sidebar start */}
-      <OffCanvas isOpen={isOpen} setIsOpen={setIsOpen} />
+      <OffCanvas isOpen={isOpen} setIsOpen={setIsOpen} menu_data={menu_data} logo={'/assets/images/logo/ahslogo.svg'} />
       {/* sidebar end */}
     </>
   );

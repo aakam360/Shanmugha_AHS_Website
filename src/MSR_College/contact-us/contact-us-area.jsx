@@ -12,14 +12,14 @@ const ContactUsArea = () => {
                 <div className="row g-5">
                     <div className="col-xl-5 col-lg-7">
                         <div className="contact-us-info" style={{width:'80%'}}>
-                           <img src='/assets/images/logo/logo-dark_550.png' style={{maxHeight:'80%', maxWidth:'80%'}} alt='Image'></img> <br />
+                           <img src='/assets/images/logo/ahslogo.svg' style={{maxHeight:'80%', maxWidth:'80%'}} alt='Image'></img> <br />
                            <br />
                            
                             <p>The college is located in an Extensive campus of about 120 acres on the state highway connecting Sankari and Tiruchengode.</p>
                             <ul className="address-list">
                                 <li>
                                     <h5 className="title">Address</h5>
-                                    <p>Sri Shanmugha College of Engineering and Technology, Pullipalayam, Morur(P.O),Sankari (T.K). Salem (D.T.), Tamil Nadu – 637 304.</p>
+                                    <p>Sri Shanmugha Institute of Allied Health Science, Pullipalayam, Morur(P.O),Sankari (T.K). Salem (D.T.), Tamil Nadu – 637 304.</p>
                                 </li>
                                 <li>
                                     <h5 className="title">Email</h5>
