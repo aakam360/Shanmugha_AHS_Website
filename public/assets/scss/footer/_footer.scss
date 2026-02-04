@@ -481,7 +481,11 @@
         margin-bottom: 0;
     }
 }
-
+@media (min-width: 992px) {
+  .copyright-area p {
+    white-space: nowrap;
+  }
+}
 .footer-dark {
     .copyright-area {
         border-top: 1px solid #1f2020;
