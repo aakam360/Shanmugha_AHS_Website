@@ -103,7 +103,7 @@ const Footer = ({ style_2, dark_bg, home_4 }) => {
     </Link>
   </p>
 
-  <p>
+  {/* <p>
     <Link href="/MSR/course/Laboratory">
       B.Sc. Medical Laboratory Technology
     </Link>
@@ -131,7 +131,7 @@ const Footer = ({ style_2, dark_bg, home_4 }) => {
     <Link href="/MSR/course/BOT">
     Bachelor of Occupational Therapy
     </Link>
-  </p>
+  </p> */}
 </div>
         </div>
       </div>
